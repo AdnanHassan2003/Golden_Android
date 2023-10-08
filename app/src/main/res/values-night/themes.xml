@@ -1,0 +1,65 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Golden" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+
+
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/mtrl_textinput_default_box_stroke_color</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxCornerRadiusBottomEnd">100dp</item>
+        <item name="boxCornerRadiusBottomStart">100dp</item>
+        <item name="boxCornerRadiusTopStart">100dp</item>
+        <item name="boxCornerRadiusTopEnd">100dp</item>
+    </style>
+
+
+    <!-- Dark mode -->
+
+    <!-- Screen background if DARK mode OFF -->
+    <style name="SCREEN">
+        <item name="android:background">#232323</item>
+    </style>
+
+    <style name="SCREENexam">
+        <item name="android:background">#232323</item>
+    </style>
+
+    <!-- text color high -->
+    <style name="TEXT">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <!-- text color low -->
+    <style name="TEXTNORMAL">
+        <item name="android:textColor">#DADDDD</item>
+
+    </style>
+
+    <!-- Edit text background -->
+    <style name="EditTextBackground">
+        <item name="android:background">@drawable/edit_solid</item>
+        <item name="android:hint">#EFEFEF</item>
+        <item name="hintTextColor">#FFFFFF</item>
+    </style>
+
+
+    <style name="textview_style">
+        <item name = "android:textColor">@color/colorWhite</item>
+    </style>
+
+
+</resources>
