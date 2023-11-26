@@ -6,6 +6,8 @@ plugins {
 android {
     compileSdk 34
 
+
+
     defaultConfig {
         applicationId "com.example.golden"
         minSdk 21
