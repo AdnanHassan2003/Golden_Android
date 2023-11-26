@@ -1,16 +1,21 @@
 package com.example.golden;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.API.Api;
@@ -32,6 +37,11 @@ public class change_password extends AppCompatActivity {
     String Npassword;
     String Cpassword;
     JsonArray CHANEPASSWORD;
+
+
+    //dialog buttons
+    Button btn_No, btn_Yes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,8 +79,49 @@ public class change_password extends AppCompatActivity {
                     Toast.makeText(change_password.this, "Check Your Current Password", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(change_password.this, "Success To Change Password", Toast.LENGTH_SHORT).show();
-                    chanege_password();
+
+                    //dialog code that single row pass to change password activity
+                    View alertCustomDialog = LayoutInflater.from(change_password.this).inflate(R.layout.dialog_changepasword,null);
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(change_password.this);
+                    alertDialog.setView(alertCustomDialog);
+
+                    //object kasamee dialog
+                    final  AlertDialog dialog = alertDialog.create();
+
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialog.show();
+
+
+                    btn_No = (Button) alertCustomDialog.findViewById(R.id.button_no);
+                    btn_Yes = (Button) alertCustomDialog.findViewById(R.id.button_yes);
+
+
+                    //if click yes change password
+                        btn_Yes.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Toast.makeText(change_password.this, "Success To Change Password", Toast.LENGTH_SHORT).show();
+                                chanege_password();
+                            }
+                        });
+
+
+
+                         //else click no do'not change password
+                        //this code his work if touch button cancel the dialog will cancel
+                        btn_No.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(change_password.this,profile.class);
+                                current_password.setText(" ");
+                                new_password.setText(" ");
+                                dialog.cancel();
+                                startActivity(intent);
+                            }
+                        });
+
+
+
                 }
             }
         });
