@@ -26,21 +26,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="37dp"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="35dp"
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/button_no"
                 android:paddingStart="45dp"
-                android:paddingTop="16dp"
+                android:paddingTop="15dp"
                 android:paddingEnd="45dp"
-                android:paddingBottom="16dp"
+                android:paddingBottom="15dp"
                 android:text="NO"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
